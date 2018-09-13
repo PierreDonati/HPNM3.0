@@ -4,7 +4,7 @@
   <% @parties.each do |party|  %>
     <li>
       <%= party.name %> -
-      Guests: <%= party.number_guests %> -
+      Guests: <%= party.available_seats %> -
       <%= party.user.first_name %> -
       <%= link_to "Aller voir", party_path(party) %>
     </li>
