@@ -31,4 +31,18 @@ party4.save!
 
 
 
+booking1 = Booking.new(user: pierre, party: party2, people_coming: 2, description: "On est cool et on adore le barbeuc")
+booking1.save!
+
+booking2 = Booking.new(user: luc, party: party2, people_coming: 6, description: "On adore ce genre de soirées par contre on est 6 mais on ramène la dose")
+booking2.save!
+
+booking3 = Booking.new(user: matthieu, party: party2, people_coming: 1, description: "je cherche des soirées de ce type je suis sympa je ramène la viande de mon daron le boucher")
+booking3.save!
+
+booking4 = Booking.new(user: paul, party: party2, people_coming: 2, description: "ça fait longtemps que j'ai pas fait de barbeuc j'aimerais venir avec ma copine")
+booking4.save!
+
+
+
 
