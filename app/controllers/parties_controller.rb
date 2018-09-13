@@ -7,6 +7,7 @@ def index
 end
 
 def show
+  @bookings = @party.bookings
 end
 
 def new
