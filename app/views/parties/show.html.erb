@@ -12,6 +12,22 @@ Quoi ramener: <%= @party.requirement %>
 <br>
 
 Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
+<br>
+<br>
+<p>
+  Demandes pour ta soirée
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <%= booking.user.first_name %> - Nombre de personnes: <%= booking.people_coming %> - A propos: <%= booking.description %>
+        <%= link_to "Modifie ta réservation", edit_party_booking_path(@party, booking) %>
+        <%= link_to "Supprime ta réservation", party_booking_path(@party, booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"} %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+
 
 <p>
 <%= link_to "Revenir à la liste des soirées", parties_path %>
@@ -21,3 +37,16 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
 <p>
 <%= link_to "Supprime ta soirée", party_path(@party), method: :delete, data: {confirm: "Es-tu sûr de vouloir faire tant de peine aux gens?"} %>
 </p>
+
+
+
+<%= link_to "Ramène toi à cette soirée", new_party_booking_path(@party) %>
+
+
+
+
+
+
+
+
+
