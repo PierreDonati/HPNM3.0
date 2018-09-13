@@ -1,0 +1,12 @@
+
+<h3>Modifie ta soirée</h3>
+
+<%= simple_form_for(@party) do |f| %>
+  <%= f.input :name, label: "Nom de ta soirée" %>
+  <%= f.input :address, label: "Adresse" %>
+  <%= f.input :date, label: "Date" %>
+  <%= f.input :number_guests, label: "Nombre de places" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :requirement, label: "Quoi ramener" %>
+  <%= f.button :submit  %>
+<% end  %>
