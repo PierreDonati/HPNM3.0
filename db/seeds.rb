@@ -17,16 +17,16 @@ paul.save!
 
 
 
-party1 = Party.new(user: pierre, name: "Murge dans mon antre", address: "5 rue pétion", date: "mercredi prochain", number_guests: "7", description: "On se retourne la tête", requirement: "bières, rhum, gin")
+party1 = Party.new(user: pierre, name: "Murge dans mon antre", address: "5 rue pétion", date: "mercredi prochain", available_seats: "7", description: "On se retourne la tête", requirement: "bières, rhum, gin")
 party1.save!
 
-party2 = Party.new(user: jean, name: "Soirée barbeuc", address: "8 rue saint-maur", date: "jeudi dans 2 semaines", number_guests: "4", description: "Petit barbeux tranquille", requirement: "viande, bières")
+party2 = Party.new(user: jean, name: "Soirée barbeuc", address: "8 rue saint-maur", date: "jeudi dans 2 semaines", available_seats: "4", description: "Petit barbeux tranquille", requirement: "viande, bières")
 party2.save!
 
-party3 = Party.new(user: matthieu, name: "Soirée classico", address: "40 Avenue de la République", date: "Samedi soir 22h", number_guests: "5", description: "gros classico pour les fans de foot", requirement: "bières, chips")
+party3 = Party.new(user: matthieu, name: "Soirée classico", address: "40 Avenue de la République", date: "Samedi soir 22h", available_seats: "5", description: "gros classico pour les fans de foot", requirement: "bières, chips")
 party3.save!
 
-party4 = Party.new(user: pierre, name: "Soirée cinéma", address: "10 Rue de Ménilmontant", date: "Dimanche début de soirée (18h)", number_guests: "5", description: "Projection de film et débat", requirement: "libres à vous de ramener ce que vous souhaitez")
+party4 = Party.new(user: pierre, name: "Soirée cinéma", address: "10 Rue de Ménilmontant", date: "Dimanche début de soirée (18h)", available_seats: "5", description: "Projection de film et débat", requirement: "libres à vous de ramener ce que vous souhaitez")
 party4.save!
 
 
