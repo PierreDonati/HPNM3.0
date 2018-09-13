@@ -1,0 +1,23 @@
+<h3><%= @party.name %></h3>
+
+Adresse: <%= @party.address %>
+<br>
+Date: <%= @party.date %>
+<br>
+Nombre de places: <%= @party.number_guests %>
+<br>
+Description: <%= @party.description %>
+<br>
+Quoi ramener: <%= @party.requirement %>
+<br>
+
+Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
+
+<p>
+<%= link_to "Revenir à la liste des soirées", parties_path %>
+</p>
+
+<%= link_to "Modifie ta soirée", edit_party_path(@party) %>
+<p>
+<%= link_to "Supprime ta soirée", party_path(@party), method: :delete, data: {confirm: "Es-tu sûr de vouloir faire tant de peine aux gens?"} %>
+</p>

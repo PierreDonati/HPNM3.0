@@ -1,0 +1,14 @@
+<h3>Parties near you</h3>
+
+<ul>
+  <% @parties.each do |party|  %>
+    <li>
+      <%= party.name %> -
+      Guests: <%= party.number_guests %> -
+      <%= party.user.first_name %> -
+      <%= link_to "Aller voir", party_path(party) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Organise ta soirée", new_party_path %>
