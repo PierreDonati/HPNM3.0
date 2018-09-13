@@ -1,0 +1,23 @@
+<h3>Dashboard</h3>
+
+Soirées que j'organise:
+<ul>
+  <% @parties.each do |party| %>
+    <li>
+      <%= party.name %> -
+      Nombre de places disponibles: <%= party.available_seats %>
+    </li>
+  <% end %>
+</ul>
+
+
+Soirées où je veux m'incruster:
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= booking.party.name %> -
+      Nombre d'incrustes: <%= booking.people_coming %>
+    </li>
+  <% end %>
+</ul>
