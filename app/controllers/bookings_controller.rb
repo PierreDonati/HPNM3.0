@@ -16,7 +16,7 @@ def edit
 end
 
 def update
-  if @booking.update(booking_params)
+ if @booking.update(booking_params)
     redirect_to party_path(@party)
   else
     render :edit
@@ -39,7 +39,7 @@ def set_booking
 end
 
 def booking_params
-  params.require(:booking).permit(:people_coming, :description)
+  params.require(:booking).permit(:people_coming, :description, :status)
 end
 
 end
