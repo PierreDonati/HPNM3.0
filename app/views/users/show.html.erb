@@ -19,7 +19,17 @@ Soirées où je veux m'incruster:
       <%= link_to booking.party.name, party_path(booking.party) %> -
       <%= booking.user.first_name %> -
       Nombre d'incrustes: <%= booking.people_coming %> -
-      Description: <%= booking.description %>
+      Description: <%= booking.description %> -
+
+      <% if booking.status == 'pending' %>
+        En attente
+
+      <% elsif booking.status == 'accepted' %>
+        Acceptée
+
+      <% else %>
+        Demande rejetée
+      <% end %>
     </li>
   <% end %>
 </ul>

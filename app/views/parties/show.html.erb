@@ -24,13 +24,18 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
   <%= link_to "Supprime ta soirée", party_path(@party), method: :delete, data: {confirm: "Es-tu sûr de vouloir faire tant de peine aux gens?"} %>
   </p>
 
-  Demandes pour ta soirée
+  <% if @bookings.blank? %>
+
+    Pas encore de demande
+
+  <% else %>
+    Demandes pour ta soirée
     <ul>
       <% @bookings.each do |booking| %>
         <li>
           <%= booking.user.first_name %> - Nombre de personnes: <%= booking.people_coming %> - A propos: <%= booking.description %>
 
-          - Demande en attente
+          - En attente
 
           <% if booking.status == "pending" %>
             <%= simple_form_for [@party, booking] do |f| %>
@@ -71,7 +76,7 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
         </li>
       <% end %>
     </ul>
-
+  <% end %>
 
 <% else %>
 
@@ -98,6 +103,17 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
        <%= @created_booking.description %>
      </li>
     </ul>
+
+    <% if @created_booking.status == 'pending' %>
+      Ta demande est en attente de confirmation
+
+    <% elsif @created_booking.status == 'accepted' %>
+      Ta demande est acceptée!
+
+    <% else %>
+      Ta demande a été rejetée
+
+    <% end %>
 
     <%= link_to "Modifie ta réservation", edit_party_booking_path(@party, @created_booking) %>
     <%= link_to "Supprime ta réservation", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"} %>
