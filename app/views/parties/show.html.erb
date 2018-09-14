@@ -38,14 +38,31 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
 
   <% if current_user.bookings.index{ |x| @party.bookings.include?(x)}.nil? %>
 
-    <%= link_to "Ramène toi à cette soirée", new_party_booking_path(@party) %>
+    <h3>Demande à t'incruster</h3>
+      <%= simple_form_for [@party, @booking] do |f| %>
+        <%= f.input :people_coming, label: "Nombre de personnes" %>
+        <%= f.input :description, label: "Commentaire" %>
+        <%= f.submit "Book ta place" %>
+      <% end %>
 
   <% else %>
-    <%= link_to "Modifie ta réservation", edit_party_booking_path(@party) %>
-    <%= link_to "Supprime ta réservation", party_booking_path(@party), method: :delete, data: {confirm: "Tu ne veux plus venir?"} %>
+    <h3>Ta réservation:</h3>
+    <ul>
+     <li>
+       <%= @created_booking.user.first_name %>
+     </li>
+     <li>
+       <%= @created_booking.people_coming  %>
+     </li>
+     <li>
+       <%= @created_booking.description %>
+     </li>
+    </ul>
+
+    <%= link_to "Modifie ta réservation", edit_party_booking_path(@party, @created_booking) %>
+    <%= link_to "Supprime ta réservation", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"} %>
 
   <% end %>
-
 
 <% end %>
 

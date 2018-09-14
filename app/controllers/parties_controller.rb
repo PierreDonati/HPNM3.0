@@ -8,6 +8,8 @@ end
 
 def show
   @bookings = @party.bookings
+  @booking = Booking.new()
+  @created_booking = @party.bookings.find_by(user_id: current_user.id)
 end
 
 def new
