@@ -35,9 +35,10 @@ Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
         <li>
           <%= booking.user.first_name %> - Nombre de personnes: <%= booking.people_coming %> - A propos: <%= booking.description %>
 
-          - En attente
-
           <% if booking.status == "pending" %>
+
+            - En attente
+
             <%= simple_form_for [@party, booking] do |f| %>
               <%= f.hidden_field :people_coming %>
               <%= f.hidden_field :description %>
