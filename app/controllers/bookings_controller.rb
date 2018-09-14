@@ -16,7 +16,7 @@ def edit
 end
 
 def update
- if @booking.update(booking_params)
+  if @booking.update(booking_params)
     redirect_to party_path(@party)
   else
     render :edit
