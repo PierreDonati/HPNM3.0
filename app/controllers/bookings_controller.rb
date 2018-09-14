@@ -3,19 +3,13 @@ class BookingsController < ApplicationController
 before_action :set_party
 before_action :set_booking, only: [:edit, :update, :destroy]
 
-def new
-  @booking = Booking.new
-end
 
 def create
   @booking = Booking.new(booking_params)
   @booking.user_id = current_user.id
   @booking.party = @party
-  if @booking.save
-    redirect_to party_path(@party)
-  else
-    render :new
-  end
+  @booking.save
+  redirect_to party_path(@party)
 end
 
 def edit

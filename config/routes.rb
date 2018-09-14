@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :parties do
-    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+    resources :bookings, only: [:create, :edit, :update, :destroy]
   end
 
   resource :users, only: [:show]
