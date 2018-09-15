@@ -1,12 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <h3 class="text-center">Paie ta soirée</h3>
 
-<h3>Paie ta soirée</h3>
-
-<%= simple_form_for(@party) do |f| %>
-  <%= f.input :name, label: "Nom de ta soirée" %>
-  <%= f.input :address, label: "Adresse" %>
-  <%= f.input :date, label: "Date" %>
-  <%= f.input :available_seats, label: "Nombre de places" %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.input :requirement, label: "Quoi ramener" %>
-  <%= f.button :submit  %>
-<% end  %>
+      <%= simple_form_for(@party) do |f| %>
+        <%= f.input :name, label: "Nom de ta soirée" %>
+        <%= f.input :address, label: "Adresse" %>
+        <%= f.input :date, label: "Date" %>
+        <%= f.input :available_seats, label: "Nombre de places" %>
+        <%= f.input :description, label: "Description" %>
+        <%= f.input :requirement, label: "Quoi ramener" %>
+        <%= f.button :submit, class: "btn btn-success"  %>
+      <% end  %>
+    </div>
+  </div>
+</div>
