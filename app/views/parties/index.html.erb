@@ -1,18 +1,24 @@
-<div class="container">
-  <div class="row">
-    <% @parties.each do |party| %>
-      <div class="col-xs-12 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category"><%= party.user.first_name %></div>
-          <div class="card-description">
-            <h2><%= party.name %></h2>
-            <p><%= party.available_seats %> places disponibles</p>
+<div class="map-layout">
+  <div class="card-container">
+      <div class="row">
+        <% @parties.each do |party| %>
+          <div class="col-xs-12 col-md-6">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+              <div class="card-category"><%= party.user.first_name %></div>
+              <div class="card-description">
+                <h2><%= party.name %></h2>
+                <p><%= party.available_seats %> places disponibles</p>
+              </div>
+              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <%= link_to "", party_path(party), class: "card-link" %>
+            </div>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-          <%= link_to "", party_path(party), class: "card-link" %>
-        </div>
-      </div>
-    <% end %>
+        <% end %>
+    </div>
+  </div>
+  <div class="map-container">
+    <div id="map"></div>
   </div>
 </div>
+
 
