@@ -1,14 +1,19 @@
 <h3>Parties near you</h3>
 
-<ul>
-  <% @parties.each do |party|  %>
-    <li>
-      <%= party.name %> -
-      Guests: <%= party.available_seats %> -
-      <%= party.user.first_name %> -
-      <%= link_to "Aller voir", party_path(party) %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
 
-<%= link_to "Organise ta soirée", new_party_path, class: "button-purple" %>
+  <% @parties.each do |party| %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+      <div class="card-description">
+        <h2><%= party.name %></h2>
+        <p><%= party.available_seats %> places disponibles</p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <%= link_to "", party_path(party), class: "card-link" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Organise ta soirée", new_party_path, class: "button-purple" %>
+
+</div>
+
