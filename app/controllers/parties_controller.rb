@@ -6,8 +6,8 @@ def index
   @parties = Party.where.not(latitude: nil, longitude: nil)
   @markers = @parties.map do |party|
     {
-      lat: flat.latitude,
-      long: flat.longitude
+      lat: party.latitude,
+      long: party.longitude
     }
   end
 end
