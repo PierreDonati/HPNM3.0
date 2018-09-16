@@ -70,7 +70,7 @@ Soirées où je veux m'incruster:
   <% @bookings.each do |booking| %>
     <li>
       <%= link_to booking.party.name, party_path(booking.party) %> -
-      <%= booking.user.first_name %> -
+      <%= booking.party.user.first_name %> -
       Nombre d'incrustes: <%= booking.people_coming %> -
       Description: <%= booking.description %> -
 
