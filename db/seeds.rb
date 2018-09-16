@@ -17,37 +17,37 @@ paul.save!
 
 
 
-party1 = Party.new(user: pierre, name: "Murge dans mon antre", address: "5 rue pétion", date: "mercredi prochain", available_seats: 7, description: "On se retourne la tête", requirement: "bières, rhum, gin")
+party1 = Party.new(user: pierre, name: "Murge dans mon antre", address: "5 rue pétion Paris", date: "mercredi prochain", available_seats: 7, description: "On se retourne la tête", requirement: "bières, rhum, gin")
 party1.save!
 
-party2 = Party.new(user: jean, name: "Soirée barbeuc", address: "8 rue saint-maur", date: "jeudi dans 2 semaines", available_seats: 4, description: "Petit barbeux tranquille", requirement: "viande, bières")
+party2 = Party.new(user: jean, name: "Soirée barbeuc", address: "8 rue saint-maur Paris", date: "jeudi dans 2 semaines", available_seats: 4, description: "Petit barbeux tranquille", requirement: "viande, bières")
 party2.save!
 
-party3 = Party.new(user: matthieu, name: "Soirée classico", address: "40 Avenue de la République", date: "Samedi soir 22h", available_seats: 5, description: "gros classico pour les fans de foot", requirement: "bières, chips")
+party3 = Party.new(user: matthieu, name: "Soirée classico", address: "79 Avenue de la République Paris", date: "Samedi soir 22h", available_seats: 5, description: "gros classico pour les fans de foot", requirement: "bières, chips")
 party3.save!
 
-party4 = Party.new(user: pierre, name: "Soirée cinéma", address: "10 Rue de Ménilmontant", date: "Dimanche début de soirée (18h)", available_seats: 5, description: "Projection de film et débat", requirement: "libres à vous de ramener ce que vous souhaitez")
+party4 = Party.new(user: pierre, name: "Soirée cinéma", address: "10 Rue de Ménilmontant Paris", date: "Dimanche début de soirée (18h)", available_seats: 5, description: "Projection de film et débat", requirement: "libres à vous de ramener ce que vous souhaitez")
 party4.save!
 
-party5 = Party.new(user: jean, name: "Soirée déguisée", address: "10 rue pétion", date: "22/12/2018 à 18h", available_seats: 5, description: "Grosse soirée déguisée en perspective", requirement: "libres à vous de ramener ce que vous souhaitez")
+party5 = Party.new(user: jean, name: "Soirée déguisée", address: "10 rue pétion Paris", date: "22/12/2018 à 18h", available_seats: 5, description: "Grosse soirée déguisée en perspective", requirement: "libres à vous de ramener ce que vous souhaitez")
 party5.save!
 
-party6 = Party.new(user: matthieu, name: "Soirée énervée", address: "8 Rue Rivoli", date: "19/09/2018 à 18h", available_seats: 10, description: "On se détruit la tête dans le plus grand des calmes", requirement: "libres à vous de ramener ce que vous souhaitez")
+party6 = Party.new(user: matthieu, name: "Soirée énervée", address: "8 Rue Rivoli Paris", date: "19/09/2018 à 18h", available_seats: 10, description: "On se détruit la tête dans le plus grand des calmes", requirement: "libres à vous de ramener ce que vous souhaitez")
 party6.save!
 
-party7 = Party.new(user: luc, name: "Soirée poker", address: "4 rue des bluets", date: "22/11/2018 à 18h", available_seats: 3, description: "Soirée poker grosses liasses en jeu", requirement: "libres à vous de ramener ce que vous souhaitez")
+party7 = Party.new(user: luc, name: "Soirée poker", address: "4 rue des bluets Paris", date: "22/11/2018 à 18h", available_seats: 3, description: "Soirée poker grosses liasses en jeu", requirement: "libres à vous de ramener ce que vous souhaitez")
 party7.save!
 
-party8 = Party.new(user: paul, name: "Soirée belote", address: "10 rue Saint-Maur", date: "13/12/2018 à 18h", available_seats: 2, description: "Soirée belote tranquille entre amis", requirement: "libres à vous de ramener ce que vous souhaitez")
+party8 = Party.new(user: paul, name: "Soirée belote", address: "10 rue Saint-Maur Paris", date: "13/12/2018 à 18h", available_seats: 2, description: "Soirée belote tranquille entre amis", requirement: "libres à vous de ramener ce que vous souhaitez")
 party8.save!
 
-party9 = Party.new(user: pierre, name: "Soirée NBA", address: "3 Boulevard Voltaire", date: "04/10/2018 à 18h", available_seats: 4, description: "OKC vs Miami 3eme match finale NBA", requirement: "libres à vous de ramener ce que vous souhaitez")
+party9 = Party.new(user: pierre, name: "Soirée NBA", address: "75 Boulevard Voltaire  75011 Paris", date: "04/10/2018 à 18h", available_seats: 4, description: "OKC vs Miami 3eme match finale NBA", requirement: "libres à vous de ramener ce que vous souhaitez")
 party9.save!
 
-party10 = Party.new(user: jean, name: "Soirée pétanque", address: "4 Boulevard de Clichy", date: "13/11/2018 à 18h", available_seats: 2, description: "Pétanque & Binouze avis aux sudistes", requirement: "libres à vous de ramener ce que vous souhaitez")
+party10 = Party.new(user: jean, name: "Soirée pétanque", address: "4 Boulevard de Clichy Paris", date: "13/11/2018 à 18h", available_seats: 2, description: "Pétanque & Binouze avis aux sudistes", requirement: "libres à vous de ramener ce que vous souhaitez")
 party10.save!
 
-party11 = Party.new(user: matthieu, name: "Soirée karaoké", address: "32 rue de belleville", date: "23/09/2018 à 18h", available_seats: 10, description: "Soirée karaoké sous grosse dose d'alcool of course", requirement: "libres à vous de ramener ce que vous souhaitez")
+party11 = Party.new(user: matthieu, name: "Soirée karaoké", address: "32 Boulevard de Ménilmontant", date: "23/09/2018 à 18h", available_seats: 10, description: "Soirée karaoké sous grosse dose d'alcool of course", requirement: "libres à vous de ramener ce que vous souhaitez")
 party11.save!
 
 

@@ -3,7 +3,13 @@ class PartiesController < ApplicationController
 before_action :set_party, only: [:show, :edit, :update, :destroy]
 
 def index
-  @parties = Party.all
+  @parties = Party.where.not(latitude: nil, longitude: nil)
+  @markers = @parties.map do |party|
+    {
+      lat: flat.latitude,
+      long: flat.longitude
+    }
+  end
 end
 
 def show
