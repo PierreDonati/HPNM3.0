@@ -1,0 +1,60 @@
+        <%= link_to "Modifie ta soirée", edit_party_path(@party) %>
+
+        <p>
+        <%= link_to "Supprime ta soirée", party_path(@party), method: :delete, data: {confirm: "Es-tu sûr de vouloir faire tant de peine aux gens?"} %>
+        </p>
+
+        <% if @bookings.blank? %>
+
+          Pas encore de demande
+
+        <% else %>
+          Demandes pour ta soirée
+          <ul>
+            <% @bookings.each do |booking| %>
+              <li>
+                <%= booking.user.first_name %> - Nombre de personnes: <%= booking.people_coming %> - A propos: <%= booking.description %>
+
+                <% if booking.status == "pending" %>
+
+                  - En attente
+
+                  <%= simple_form_for [@party, booking] do |f| %>
+                    <%= f.hidden_field :people_coming %>
+                    <%= f.hidden_field :description %>
+                    <%= f.hidden_field :status, value: 'accepted' %>
+                    <%= f.submit 'Accepter'  %>
+                  <% end %>
+
+                  <%= simple_form_for [@party, booking] do |f| %>
+                    <%= f.hidden_field :people_coming %>
+                    <%= f.hidden_field :description %>
+                    <%= f.hidden_field :status, value: 'declined' %>
+                    <%= f.submit 'Refuser'  %>
+                  <% end %>
+
+                <% elsif booking.status == "accepted" %>
+
+                  - Vous avez accepté cette demande
+
+                  <%= simple_form_for [@party, booking] do |f| %>
+                    <%= f.hidden_field :people_coming %>
+                    <%= f.hidden_field :description %>
+                    <%= f.hidden_field :status, value: 'declined' %>
+                    <%= f.submit 'Refuser'  %>
+                  <% end %>
+                <% else %>
+
+                   - Vous avez refusé cette demande
+
+                  <%= simple_form_for [@party, booking] do |f| %>
+                    <%= f.hidden_field :people_coming %>
+                    <%= f.hidden_field :description %>
+                    <%= f.hidden_field :status, value: 'accepted' %>
+                    <%= f.submit 'Accepter'  %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>

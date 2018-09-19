@@ -1,0 +1,26 @@
+<h3>Ta réservation:</h3>
+<ul>
+  <li>
+    <%= @created_booking.user.first_name %>
+  </li>
+  <li>
+    <%= @created_booking.people_coming  %>
+  </li>
+  <li>
+    <%= @created_booking.description %>
+  </li>
+</ul>
+
+<% if @created_booking.status == 'pending' %>
+  Ta demande est en attente de confirmation
+
+<% elsif @created_booking.status == 'accepted' %>
+  Ta demande est acceptée!
+
+<% else %>
+  Ta demande a été rejetée
+
+<% end %>
+
+<%= link_to "Modifie ta réservation", edit_party_booking_path(@party, @created_booking) %>
+<%= link_to "Supprime ta réservation", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"} %>
