@@ -1,18 +1,14 @@
 <div class="party-description">
   <div class="party-title">
     <h3><%= @party.name %></h3>
+    <ul class="list-inline">
+      <li><i class="fa fa-calendar"></i> <%= @party.date %></li>
+      <li><i class="fa fa-user"></i> <%= @party.available_seats %> places disponibles</li>
+    </ul>
   </div>
   <div class="party-description-section">
     <h4>Description</h4>
     <p><%= @party.description %></p>
-  </div>
-  <div class="party-description-section">
-    <h4>Date</h4>
-    <p><%= @party.date %></p>
-  </div>
-  <div class="party-description-section">
-    <h4>Nombre de places</h4>
-    <p><%= @party.available_seats %></p>
   </div>
   <div class="party-description-section">
     <h4>Quoi ramener</h4>
@@ -22,8 +18,6 @@
     <h4>Ton hôte</h4>
     <p><%= @party.user.first_name %> <%= @party.user.last_name %> <%= image_tag "pierre.png", class: "avatar"%> </p>
     <p> <%= @party.user.about %></p>
-
-
   </div>
   <div class="party-description-section">
     <h4>Address</h4>
