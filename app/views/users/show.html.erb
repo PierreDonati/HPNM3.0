@@ -6,63 +6,9 @@ Soirées que j'organise:
     <li>
       <%= link_to party.name, party_path(party) %> -
       Nombre de places disponibles: <%= party.available_seats %>
-
-      <% if party.bookings.blank? %>
-        Pas encore de demande
-      <% else %>
-        <ul>
-          <% party.bookings.each do |booking| %>
-            <li>
-              <%= booking.user.first_name %> -
-              <%= booking.description %> -
-              <%= booking.people_coming %> -
-
-              <% if booking.status == "pending" %>
-                Demande en attente
-
-                <%= simple_form_for [party, booking] do |f| %>
-                  <%= f.hidden_field :people_coming %>
-                  <%= f.hidden_field :description %>
-                  <%= f.hidden_field :status, value: 'accepted' %>
-                  <%= f.submit 'Accepter'  %>
-                <% end %>
-
-                <%= simple_form_for [party, booking] do |f| %>
-                  <%= f.hidden_field :people_coming %>
-                  <%= f.hidden_field :description %>
-                  <%= f.hidden_field :status, value: 'declined' %>
-                  <%= f.submit 'Refuser'  %>
-                <% end %>
-
-              <% elsif booking.status == "accepted" %>
-                Demande acceptée
-
-                <%= simple_form_for [party, booking] do |f| %>
-                  <%= f.hidden_field :people_coming %>
-                  <%= f.hidden_field :description %>
-                  <%= f.hidden_field :status, value: 'declined' %>
-                  <%= f.submit 'Refuser'  %>
-                <% end %>
-
-              <% else %>
-                Demande rejetée
-
-                <%= simple_form_for [party, booking] do |f| %>
-                  <%= f.hidden_field :people_coming %>
-                  <%= f.hidden_field :description %>
-                  <%= f.hidden_field :status, value: 'accepted' %>
-                  <%= f.submit 'Accepter'  %>
-                <% end %>
-
-              <% end %>
-              </li>
-          <% end %>
-        </ul>
-      <% end %>
     </li>
   <% end %>
 </ul>
-
 
 Soirées où je veux m'incruster:
 
