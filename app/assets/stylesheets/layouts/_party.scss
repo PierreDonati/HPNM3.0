@@ -1,0 +1,47 @@
+.party-layout{
+  display: flex;
+  align-items: stretch
+}
+
+.party-description-container{
+  flex: 0 0 65%;
+}
+
+.booking-container{
+  flex: 0 0 35%;
+  height: 100vh;
+  top: 0px !important;
+  position: sticky !important;
+  padding: 60px 30px
+}
+
+.party-description{
+}
+
+.party-title{
+  margin: 30px
+}
+
+.party-title h3 {
+  font-size: 30px;
+  color: rgba(50,50,50,1)
+}
+
+.party-description-section {
+  border-bottom: 1px solid rgba(220,220,220,1);
+  margin: 40px;
+  padding: 20px
+}
+
+.party-description-section p {
+  font-size: 14px;
+  color: rgba(80,80,80,1)
+}
+
+.party-description-section h4 {
+  font-size: 20px;
+  color: rgba(70,70,70,1)
+}
+
+
+
