@@ -20,7 +20,7 @@ paul.save!
 party1 = Party.new(user: pierre, name: "Murge dans mon antre", address: "5 rue pétion Paris", date: "mercredi prochain", available_seats: 7, description: "On se retourne la tête", requirement: "bières, rhum, gin")
 party1.save!
 
-party2 = Party.new(user: jean, name: "Soirée barbeuc", address: "8 rue saint-maur Paris", date: "jeudi dans 2 semaines", available_seats: 4,
+party2 = Party.new(user: jean, name: "Soirée BBQ", address: "8 rue saint-maur Paris", date: "09/11/2018 à 13h", available_seats: 4,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus dapibus molestie. Etiam a ex vitae lectus scelerisque tristique eu quis mauris. Vivamus varius semper enim, imperdiet auctor magna suscipit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam maximus metus in felis venenatis, vitae consequat mi commodo. Nulla facilisi. Fusce eu erat ut risus laoreet condimentum. Mauris luctus congue lacus vel egestas. Suspendisse tempor elit ut commodo placerat. Donec eros nunc, semper egestas scelerisque et, scelerisque at est. In molestie mollis diam, a lobortis tortor dapibus a. Sed iaculis, diam vel sagittis blandit, erat erat sagittis sapien, at scelerisque nibh velit vitae arcu. Phasellus eget diam non dui eleifend laoreet. Proin a suscipit orci, eu sodales libero.",
   requirement: "Duis eu neque ut lacus ultrices porttitor. Etiam ac dolor sit amet nunc cursus fringilla ac non nulla. Quisque lectus odio, mollis quis aliquet vitae, feugiat ac odio. Duis ultricies sagittis diam et semper. Sed ut mauris eu dui euismod vestibulum. Ut iaculis semper ligula, nec gravida leo sollicitudin sit amet. Praesent ac ornare nisi. ")
 party2.save!
