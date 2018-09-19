@@ -2,7 +2,7 @@
 pierre = User.new(email: "pierre@gmail.com", password: "123456", first_name: "Pierre", last_name: "Donati", age: 24, phone_number: "0785154005")
 pierre.save!
 
-jean = User.new(email: "jean@gmail.com", password: "123456", first_name: "Jean", last_name: "Donati", age: 21, phone_number: "0787976")
+jean = User.new(email: "jean@gmail.com", password: "123456", first_name: "Jean", last_name: "Donati", age: 21, phone_number: "0787976", about: "Suspendisse non dolor in ante facilisis volutpat eu vitae magna. Duis sagittis euismod tellus, id cursus nisl rutrum mollis. Mauris vel odio id dui rhoncus euismod. Duis suscipit urna vel dolor sollicitudin volutpat. Donec id vestibulum ante. Curabitur vitae mollis ligula. Etiam ante risus, gravida vitae ex nec, faucibus lacinia mauris. Mauris vel dui magna. Aenean tristique ex finibus, posuere tortor a, varius dolor. Ut et luctus elit. Praesent varius quam eget ligula pellentesque, in lacinia massa posuere. Phasellus aliquet convallis magna eget sollicitudin.")
 jean.save!
 
 matthieu = User.new(email: "matthieu@gmail.com", password: "123456", first_name: "Matthieu", last_name: "Donati", age: 18, phone_number: "077688678")

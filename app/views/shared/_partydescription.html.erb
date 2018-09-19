@@ -20,10 +20,10 @@
   </div>
   <div class="party-description-section">
     <h4>Ton hôte</h4>
-    <p>
-      <%= @party.user.first_name %> <%= @party.user.last_name %>
-      <%= image_tag "pierre.png", class: "avatar"%>
-    </p>
+    <p><%= @party.user.first_name %> <%= @party.user.last_name %> <%= image_tag "pierre.png", class: "avatar"%> </p>
+    <p> <%= @party.user.about %></p>
+
+
   </div>
   <div class="party-description-section">
     <h4>Address</h4>
