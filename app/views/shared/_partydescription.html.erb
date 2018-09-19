@@ -1,15 +1,33 @@
-<h3><%= @party.name %></h3>
+<div class="party-description">
+  <div class="party-title">
+    <h3><%= @party.name %></h3>
+  </div>
+  <div class="party-description-section">
+    <h4>Description</h4>
+    <p><%= @party.description %></p>
+  </div>
+  <div class="party-description-section">
+    <h4>Date</h4>
+    <p><%= @party.date %></p>
+  </div>
+  <div class="party-description-section">
+    <h4>Nombre de places</h4>
+    <p><%= @party.available_seats %></p>
+  </div>
+  <div class="party-description-section">
+    <h4>Quoi ramener</h4>
+    <p><%= @party.requirement %></p>
+  </div>
+  <div class="party-description-section">
+    <h4>Ton hôte</h4>
+    <p>
+      <%= @party.user.first_name %> <%= @party.user.last_name %>
+      <%= image_tag "pierre.png", class: "avatar"%>
+    </p>
+  </div>
+  <div class="party-description-section">
+    <h4>Address</h4>
+    <p><%= @party.address %></p>
+  </div>
+</div>
 
-  Adresse: <%= @party.address %>
-  <br>
-  Date: <%= @party.date %>
-  <br>
-  Nombre de places: <%= @party.available_seats %>
-  <br>
-  Description: <%= @party.description %>
-  <br>
-  Quoi ramener: <%= @party.requirement %>
-  <br>
-
-  Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
-  <%= image_tag "pierre.png", class: "avatar"%>
