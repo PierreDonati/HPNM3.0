@@ -1,0 +1,15 @@
+<h3><%= @party.name %></h3>
+
+  Adresse: <%= @party.address %>
+  <br>
+  Date: <%= @party.date %>
+  <br>
+  Nombre de places: <%= @party.available_seats %>
+  <br>
+  Description: <%= @party.description %>
+  <br>
+  Quoi ramener: <%= @party.requirement %>
+  <br>
+
+  Chez: <%= @party.user.first_name %> <%= @party.user.last_name %>
+  <%= image_tag "pierre.png", class: "avatar"%>
