@@ -6,13 +6,20 @@
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   position: relative;
+  font-size: 13px;
 }
 
 .booking-review h2 {
   font-size: 18px;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   margin-bottom: 23px;
+}
+
+.status-section {
+  position: absolute;
+  top: 36px;
+  right: 15px
 }
 
 .people-coming-section{
@@ -25,30 +32,31 @@
   font-weight: bold;
 }
 
-.people-coming-number {
-  size: 30px;
-  font-weight: bold
-}
-
 .description-label{
   font-weight: bold;
   margin-bottom: 5px
 }
 
+.description-text {
+  padding-bottom: 30px;
+}
+
 .text-grey{
   color: grey;
   font-weight: bold;
-  font-size: 16px
+  font-size: 14px
 }
 
 .text-red {
   color: red;
-  font-weight: bold
+  font-weight: bold;
+  font-size: 14px
 }
 
 .text-green {
   color: green;
-  font-weight: bold
+  font-weight: bold;
+  font-size: 14px
 }
 
 .buttons {
