@@ -1,7 +1,0 @@
-<h5>Demande à t'incruster</h5>
-<%= simple_form_for [@party, @booking] do |f| %>
-  <%= f.input :people_coming, label: "Nombre de personnes" %>
-  <%= f.input :description, label: "Commentaire" %>
-  <%= f.hidden_field :status, value: 'pending' %>
-  <%= f.submit "Valider", class: "btn btn-danger" %>
-<% end %>
