@@ -1,0 +1,58 @@
+.booking-review{
+  background-color: white;
+  margin-top: -20px;
+  padding: 30px 40px;
+  padding-top: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.booking-review h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.people-coming-section{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 3px
+}
+
+.people-coming-label{
+  font-weight: bold;
+}
+
+.people-coming-number {
+  size: 30px;
+  font-weight: bold
+}
+
+.description-label{
+  font-weight: bold;
+  margin-bottom: 5px
+}
+
+.text-grey{
+  color: grey;
+  font-weight: bold;
+  font-size: 16px
+}
+
+.text-red {
+  color: red;
+  font-weight: bold
+}
+
+.text-green {
+  color: green;
+  font-weight: bold
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px
+}

@@ -5,6 +5,8 @@ class Booking < ApplicationRecord
   validates :people_coming, presence: true
   validate :maximum_people_coming
   validates :description, presence: true
+  validates :description, length: { maximum: 700,
+    too_long: "700 caractères maximum" }
   validates :status, inclusion: {in: ['pending', 'accepted', 'declined']}
 
 

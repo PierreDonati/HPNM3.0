@@ -4,17 +4,22 @@
     </div>
     <%= render 'shared/party_description' %>
   </div>
-  <div class="booking-container">
     <% if @party.user != current_user %>
       <% if current_user.bookings.index{ |x| @party.bookings.include?(x)}.nil? %>
-        <%= render 'shared/booking_form'  %>
+        <div class="booking-container-fixed">
+          <%= render 'shared/booking_form'  %>
+        </div>
       <% else %>
+        <div class="booking-container-fixed">
         <%= render 'shared/booking_review' %>
+        </div>
       <% end %>
     <% else %>
-      <%= render 'shared/bookings_list' %>
+      <div class="booking-container">
+        <%= render 'shared/bookings_list' %>
+      </div>
     <% end %>
-  </div>
+
 </div>
 
 
