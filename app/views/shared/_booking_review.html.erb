@@ -1,24 +1,27 @@
 <div class="booking-review">
   <h2>Ta réservation</h2>
+  <div class="status-section">
+    <% if @created_booking.status == 'pending' %>
+      <p class="text-grey">En attente</p>
+
+    <% elsif @created_booking.status == 'accepted' %>
+      <p class="text-green">Acceptée</p>
+
+    <% else %>
+      <p class="text-red">Rejetée</p>
+
+    <% end %>
+  </div>
   <div class="people-coming-section">
     <p class="people-coming-label">Nombre de personnes</p>
-    <p class="people-coming-number"><%= @created_booking.people_coming  %></p>
+    <div class="people-coming-number"><%= @created_booking.people_coming  %></div>
   </div>
   <div class="description-section">
     <p class="description-label">Commentaire</p>
     <p class="description-text"><%= @created_booking.description  %></p>
   </div>
 
-  <% if @created_booking.status == 'pending' %>
-    <p class="text-grey">En attente</p>
 
-  <% elsif @created_booking.status == 'accepted' %>
-    <p class="text-green">Acceptée</p>
-
-  <% else %>
-    <p class="text-red">Rejetée</p>
-
-  <% end %>
   <div class="buttons">
     <%= link_to "Modifier", edit_party_booking_path(@party, @created_booking), class: "btn btn-primary" %>
     <%= link_to "Supprimer", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"}, class:"btn btn-danger" %>
