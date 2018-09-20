@@ -1,7 +1,6 @@
 .party-layout{
   display: flex;
   align-items: stretch;
-  background-color: white;
 }
 
 .party-banner {
@@ -12,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 2px
 }
 
 .party-description-container{

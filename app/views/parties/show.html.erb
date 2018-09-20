@@ -2,17 +2,17 @@
   <div class="party-description-container">
     <div class="party-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
     </div>
-    <%= render 'shared/partydescription' %>
+    <%= render 'shared/party_description' %>
   </div>
   <div class="booking-container">
     <% if @party.user != current_user %>
       <% if current_user.bookings.index{ |x| @party.bookings.include?(x)}.nil? %>
-        <%= render 'shared/bookingform'  %>
+        <%= render 'shared/booking_form'  %>
       <% else %>
-        <%= render 'shared/bookingreview' %>
+        <%= render 'shared/booking_review' %>
       <% end %>
     <% else %>
-      <%= render 'shared/bookingslist' %>
+      <%= render 'shared/bookings_list' %>
     <% end %>
   </div>
 </div>

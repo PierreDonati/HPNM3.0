@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <h3 class="text-center">Modifie ta soirée</h3>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-party-new">
+        <h2 class="text-center">Modifie ta soirée</h2>
 
-      <%= simple_form_for(@party) do |f| %>
-        <%= f.input :name, label: "Nom de ta soirée" %>
-        <%= f.input :address, label: "Adresse" %>
-        <%= f.input :date, label: "Date" %>
-        <%= f.input :available_seats, label: "Nombre de places" %>
-        <%= f.input :description, label: "Description" %>
-        <%= f.input :requirement, label: "Quoi ramener" %>
-        <%= f.button :submit, class: "btn btn-success"  %>
-      <% end  %>
+        <%= simple_form_for(@party) do |f| %>
+          <%= f.input :name, label: "Nom de ta soirée", :label_html => {class: "label-style"} %>
+          <%= f.input :date, label: "Date", :label_html => {class: "label-style"} %>
+          <%= f.input :available_seats, label: "Nombre de places", :label_html => {class: "label-style"} %>
+          <%= f.input :description, label: "Description", :label_html => {class: "label-style"} %>
+          <%= f.input :requirement, label: "Quoi ramener", :label_html => {class: "label-style"} %>
+          <%= f.input :address, label: "Adresse (indiquer uniquement la rue)", :label_html => {class: "label-style"} %>
+          <%= f.button :submit, 'Valider', class: "btn btn-primary" %>
+        <% end  %>
+      </div>
     </div>
-</div>
+  </div>
 </div>
