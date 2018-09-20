@@ -18,9 +18,16 @@
   flex: 0 0 65%;
 }
 
-.booking-container{
+.booking-container-fixed{
   flex: 0 0 35%;
   height: 100vh;
+  top: 0px !important;
+  position: sticky !important;
+  padding: 60px 30px
+}
+
+.booking-container{
+  flex: 0 0 35%;
   top: 0px !important;
   position: sticky !important;
   padding: 60px 30px
