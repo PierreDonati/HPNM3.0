@@ -1,9 +1,9 @@
 <div class="booking-form">
   <h2>Réserver</h2>
   <%= simple_form_for [@party, @booking] do |f| %>
-    <%= f.input :people_coming, label: "Nombre de personnes", :label_html => {class: "label-style"} %>
-    <%= f.input :description, label: "Commentaire", :label_html => {class: "label-style"} %>
-    <%= f.hidden_field :status, value: 'pending', :label_html => {class: "label-style"} %>
+    <%= f.input :people_coming, :input_html => {class: "input-border"}, label: "Nombre de personnes", :label_html => {class: "label-style"} %>
+    <%= f.input :description, :input_html => {class: "input-border"}, label: "Commentaire", :label_html => {class: "label-style"} %>
+    <%= f.hidden_field :status, value: 'pending' %>
     <%= f.submit "Valider", class: "btn btn-primary" %>
   <% end %>
 </div>
