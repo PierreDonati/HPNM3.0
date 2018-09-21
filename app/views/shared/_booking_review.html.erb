@@ -23,7 +23,7 @@
 
 
   <div class="buttons">
-    <%= link_to "Modifier", edit_party_booking_path(@party, @created_booking), class: "btn btn-primary" %>
-    <%= link_to "Supprimer", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"}, class:"btn btn-danger" %>
+    <%= link_to "Modifier", edit_party_booking_path(@party, @created_booking), class: "button-blue" %>
+    <%= link_to "Supprimer", party_booking_path(@party, @created_booking), method: :delete, data: {confirm: "Tu ne veux plus venir?"}, class: "button-red" %>
   </div>
 </div>

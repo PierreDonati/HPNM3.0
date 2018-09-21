@@ -5,12 +5,12 @@
         <h2 class="text-center">Modifie ta soirée</h2>
 
         <%= simple_form_for(@party) do |f| %>
-          <%= f.input :name, label: "Nom de ta soirée", :label_html => {class: "label-style"} %>
-          <%= f.input :date, label: "Date", :label_html => {class: "label-style"} %>
-          <%= f.input :available_seats, label: "Nombre de places", :label_html => {class: "label-style"} %>
-          <%= f.input :description, label: "Description", :label_html => {class: "label-style"} %>
-          <%= f.input :requirement, label: "Quoi ramener", :label_html => {class: "label-style"} %>
-          <%= f.input :address, label: "Adresse (indiquer uniquement la rue)", :label_html => {class: "label-style"} %>
+          <%= f.input :name, :input_html => {class: "input-border"}, label: "Nom de ta soirée", :label_html => {class: "label-style"} %>
+          <%= f.input :date, :input_html => {class: "input-border"}, label: "Date", :label_html => {class: "label-style"} %>
+          <%= f.input :available_seats, :input_html => {class: "input-border"}, label: "Nombre de places", :label_html => {class: "label-style"} %>
+          <%= f.input :description, :input_html => {class: "input-border"}, label: "Description", :label_html => {class: "label-style"} %>
+          <%= f.input :requirement, :input_html => {class: "input-border"}, label: "Quoi ramener", :label_html => {class: "label-style"} %>
+          <%= f.input :address, :input_html => {class: "input-border"}, label: "Adresse (indiquer uniquement la rue)", :label_html => {class: "label-style"} %>
           <%= f.button :submit, 'Valider', class: "btn btn-primary" %>
         <% end  %>
       </div>

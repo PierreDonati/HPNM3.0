@@ -1,25 +1,3 @@
-.button-purple{
-  background: transparent;
-  color: #7045af;
-  border-radius: 50px;
-  font-weight: lighter;
-  text-decoration: none;
-  padding: 10px 15px;
-  border: 1px solid #7045af;
-  opacity: 0.8;
-}
-
-.button-purple:hover{
-  background: transparent;
-  color: #7045af;
-  border-radius: 50px;
-  font-weight: lighter;
-  text-decoration: none;
-  padding: 10px 15px;
-  border: 1px solid #7045af;
-  opacity: 1;
-  }
-
   .button-red-home{
     background-color: #ff6473;
     color: white;
@@ -37,3 +15,41 @@
     text-decoration: none;
     color: white
   }
+
+
+.button-blue{
+    background-color: #40a8c4;
+    color: white;
+    border-radius: 50px;
+    padding: 9px 11px;
+    text-decoration: none;
+    font-size: 14px
+  }
+
+  .button-blue:hover{
+    opacity: 0.9;
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid #40a8c4;
+    color: #40a8c4;
+  }
+
+.button-red{
+    background-color: #ff2e4c;
+    color: white;
+    border-radius: 50px;
+    padding: 9px 11px;
+    text-decoration: none;
+    font-size: 14px
+  }
+
+  .button-red:hover{
+    opacity: 0.9;
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid #ff2e4c;
+    color: #ff2e4c;
+  }
+
+
+
