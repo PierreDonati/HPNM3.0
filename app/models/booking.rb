@@ -10,13 +10,15 @@ class Booking < ApplicationRecord
   validates :status, inclusion: {in: ['pending', 'accepted', 'declined']}
 
 
-private
+  private
 
-def maximum_people_coming
-  if self.people_coming > self.party.available_seats
-    errors.add(:people_coming, "Le nombre de personnes venant ne peut pas excéder le nombre de places disponibles")
+  def maximum_people_coming
+    if self.people_coming == nil
+      errors.add(:people_coming, "Remplir les champs du formulaire")
+    elsif self.people_coming > self.party.available_seats
+      errors.add(:people_coming, "Le nombre de personnes venant ne peut pas excéder le nombre de places disponibles")
+    end
   end
-end
 
 end
 
