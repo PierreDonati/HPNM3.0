@@ -1,11 +1,26 @@
 .input-border {
   border-bottom: 1px solid rgba(210,210,210,1);
-  border-radius: 20px;
+  border-radius: 3px;
   margin-top: 5px;
+}
+
+.input-border-square {
+  border: 1px solid rgba(220,220,220,0.7);
+  border-radius: 2px
+}
+
+.input-border-square::placeholder{
+  font-size: 15px;
+  color: rgba(190,190,190,0.9);
+  padding-top: 8px
 }
 
 .label-style {
   color: rgba(80,80,80,0.9);
   font-weight: bold;
   font-size: 14px
+}
+
+.label-disappear {
+  font-size: 0px
 }
