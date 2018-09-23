@@ -2,13 +2,13 @@
   <h2>Ta réservation</h2>
   <div class="status-section">
     <% if @created_booking.status == 'pending' %>
-      <p class="text-grey">En attente</p>
+      <p class="text-grey">EN ATTENTE</p>
 
     <% elsif @created_booking.status == 'accepted' %>
-      <p class="text-green">Acceptée</p>
+      <p class="text-green">ACCEPTEE</p>
 
     <% else %>
-      <p class="text-red">Rejetée</p>
+      <p class="text-red">REJETEE</p>
 
     <% end %>
   </div>

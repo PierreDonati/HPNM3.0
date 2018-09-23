@@ -5,7 +5,7 @@
     <%= render 'shared/party_description' %>
     <% if @party.user == current_user %>
       <div class="party-modification-section">
-        <%= link_to "Modifier la soirée", edit_party_path(@party), class: "button-blue" %>
+        <%= link_to "Modifier la soirée", edit_party_path(@party), class: "button-blue-big-font" %>
       </div>
     <% end %>
   </div>

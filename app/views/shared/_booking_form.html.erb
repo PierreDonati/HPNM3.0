@@ -1,5 +1,5 @@
 <div class="booking-form">
-  <h2>Réserver</h2>
+  <h2>Demande</h2>
   <%= simple_form_for [@party, @booking] do |f| %>
     <%= f.input :people_coming, :input_html => {class: "input-border-square", style: 'height:50px'}, label: "Nombre de personnes", :label_html => {class: "label-style"}, placeholder: "3" %>
     <%= f.input :description, :input_html => {class: "input-border-square", :rows => 9}, label: "Commentaire (max 700 car)", :label_html => {class: "label-style"}, placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non scelerisque massa. Cras ut tincidunt quam. In neque elit, finibus ultrices dignissim a, semper sit amet eros. Fusce quis enim dapibus, ullamcorper orci vel, malesuada lacus. Integer tristique arcu a purus facilisis, vitae auctor arcu condimentum. " %>
