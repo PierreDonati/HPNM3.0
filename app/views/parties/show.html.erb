@@ -3,6 +3,11 @@
     <div class="party-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
     </div>
     <%= render 'shared/party_description' %>
+    <% if @party.user == current_user %>
+      <div class="party-modification-section">
+        <%= link_to "Modifier la soirée", edit_party_path(@party), class: "button-blue" %>
+      </div>
+    <% end %>
   </div>
     <% if @party.user != current_user %>
       <% if current_user.bookings.index{ |x| @party.bookings.include?(x)}.nil? %>
