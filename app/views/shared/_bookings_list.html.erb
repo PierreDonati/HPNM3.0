@@ -1,60 +1,76 @@
-        <%= link_to "Modifie ta soirée", edit_party_path(@party) %>
+<% if @bookings.blank? %>
 
-        <p>
-        <%= link_to "Supprime ta soirée", party_path(@party), method: :delete, data: {confirm: "Es-tu sûr de vouloir faire tant de peine aux gens?"} %>
-        </p>
+  Pas encore de demande
 
-        <% if @bookings.blank? %>
+<% else %>
+  <ul class="list-no-decoration">
+    <% @bookings.each do |booking| %>
+      <li>
+        <div class="bookings-host-review">
+          <h5 class="booking-user-name"><%= booking.user.first_name %></h5>
+          <div class="people-coming-host-review">
+            <h5 class="people-coming-label">Nombre de personnes</h5>
+            <p class="people-coming-number"><%= booking.people_coming %></p>
+          </div>
+          <div class="description-section-host-review">
+            <h5 class="description-label-host-review">A propos</h5>
+            <p class="description-text-host-review"><%= booking.description %></p>
+          </div>
 
-          Pas encore de demande
+          <div class="status-section">
+            <% if booking.status == "pending" %>
+              <p class="text-grey">EN ATTENTE</p>
+            <% elsif booking.status == "accepted" %>
+              <p class="text-green">ACCEPTEE</p>
+            <% else %>
+               <p class="text-red">REJETEE</p>
+            <% end %>
+          </div>
+          Contacter <%= booking.user.first_name %>
 
-        <% else %>
-          Demandes pour ta soirée
-          <ul>
-            <% @bookings.each do |booking| %>
+          <div class="status-section-choice">
+            <% if booking.status == "pending" %>
+            <ul class="list-inline list-no-decoration">
               <li>
-                <%= booking.user.first_name %> - Nombre de personnes: <%= booking.people_coming %> - A propos: <%= booking.description %>
-
-                <% if booking.status == "pending" %>
-
-                  - En attente
-
-                  <%= simple_form_for [@party, booking] do |f| %>
-                    <%= f.hidden_field :people_coming %>
-                    <%= f.hidden_field :description %>
-                    <%= f.hidden_field :status, value: 'accepted' %>
-                    <%= f.submit 'Accepter'  %>
-                  <% end %>
-
-                  <%= simple_form_for [@party, booking] do |f| %>
-                    <%= f.hidden_field :people_coming %>
-                    <%= f.hidden_field :description %>
-                    <%= f.hidden_field :status, value: 'declined' %>
-                    <%= f.submit 'Refuser'  %>
-                  <% end %>
-
-                <% elsif booking.status == "accepted" %>
-
-                  - Vous avez accepté cette demande
-
-                  <%= simple_form_for [@party, booking] do |f| %>
-                    <%= f.hidden_field :people_coming %>
-                    <%= f.hidden_field :description %>
-                    <%= f.hidden_field :status, value: 'declined' %>
-                    <%= f.submit 'Refuser'  %>
-                  <% end %>
-                <% else %>
-
-                   - Vous avez refusé cette demande
-
-                  <%= simple_form_for [@party, booking] do |f| %>
-                    <%= f.hidden_field :people_coming %>
-                    <%= f.hidden_field :description %>
-                    <%= f.hidden_field :status, value: 'accepted' %>
-                    <%= f.submit 'Accepter'  %>
-                  <% end %>
+                <%= simple_form_for [@party, booking] do |f| %>
+                  <%= f.hidden_field :people_coming %>
+                  <%= f.hidden_field :description %>
+                  <%= f.hidden_field :status, value: 'accepted' %>
+                  <%= f.submit 'Accepter', class: "text-green-button"  %>
                 <% end %>
               </li>
+              <li>
+                <%= simple_form_for [@party, booking] do |f| %>
+                  <%= f.hidden_field :people_coming %>
+                  <%= f.hidden_field :description %>
+                  <%= f.hidden_field :status, value: 'declined' %>
+                  <%= f.submit 'Refuser', class: "text-red-button"  %>
+                <% end %>
+              </li>
+            </ul>
+
+            <% elsif booking.status == "accepted" %>
+
+              <%= simple_form_for [@party, booking] do |f| %>
+                <%= f.hidden_field :people_coming %>
+                <%= f.hidden_field :description %>
+                <%= f.hidden_field :status, value: 'declined' %>
+                <%= f.submit 'Refuser', class: "text-red-button"  %>
+              <% end %>
+
+            <% else %>
+
+              <%= simple_form_for [@party, booking] do |f| %>
+                <%= f.hidden_field :people_coming %>
+                <%= f.hidden_field :description %>
+                <%= f.hidden_field :status, value: 'accepted' %>
+                <%= f.submit 'Accepter', class: "text-green-button"  %>
+              <% end %>
+
             <% end %>
-          </ul>
-        <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
