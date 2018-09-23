@@ -1,36 +1,55 @@
-<h3>Dashboard</h3>
+<div class="container">
 
-Soirées que j'organise:
-<ul>
-  <% @parties.each do |party| %>
-    <li>
-      <%= link_to party.name, party_path(party) %> -
-      Nombre de places disponibles: <%= party.available_seats %>
-    </li>
-  <% end %>
-</ul>
+  <div id="menu">
+      <a href="#tab1">SOIRÉES QUE J'ORGANISE</a> -
+      <a href="#tab2">MES DEMANDES</a>
+  </div>
 
-Soirées où je veux m'incruster:
+  <div id="tab2" class="tab-content">
+    <ul>
+      <% @bookings.each do |booking| %>
+        <li>
+          <%= booking.party.name %>
+          - <%= booking.party.date %>
+          - Nombre de personnes: <%= booking.people_coming %> -
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <%= link_to booking.party.name, party_path(booking.party) %> -
-      <%= booking.party.user.first_name %> -
-      Nombre d'incrustes: <%= booking.people_coming %> -
-      Description: <%= booking.description %> -
+          <% if booking.status == 'pending' %>
+            En attente
 
-      <% if booking.status == 'pending' %>
-        En attente
+          <% elsif booking.status == 'accepted' %>
+            Acceptée
 
-      <% elsif booking.status == 'accepted' %>
-        Acceptée
-
-      <% else %>
-        Demande rejetée
+          <% else %>
+            Demande rejetée
+          <% end %>
+          - <%= link_to "Consulter", party_path(booking.party) %>
+        </li>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+  </div>
 
-<%= link_to "Modifier mes infos", edit_user_registration_path %>
+
+
+  <div id="tab1" class="tab-content">
+    <ul>
+      <% @parties.each do |party| %>
+        <li>
+          <%= party.name %>
+          - <%= party.date %>
+          - Places disponiles: <%= party.available_seats %>
+          - Nombre de demandes: <%= party.bookings.count %>
+          - <%= link_to "Consulter", party_path(party) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
