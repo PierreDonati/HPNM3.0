@@ -3,7 +3,11 @@
       <div class="row">
         <% @parties.each do |party| %>
           <div class="col-xs-12 col-md-6">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <% if party.photo.present? %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path party.photo, crop: :fill %>');">
+            <% else %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <% end %>
               <div class="card-category"><%= party.user.first_name %></div>
               <div class="card-description">
                 <h2><%= party.name %></h2>

@@ -49,7 +49,7 @@ def set_party
 end
 
 def party_params
-  params.require(:party).permit(:name, :address, :date, :available_seats, :description, :requirement)
+  params.require(:party).permit(:name, :address, :date, :available_seats, :description, :requirement, :photo)
 end
 
 end
