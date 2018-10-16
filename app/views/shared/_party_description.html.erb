@@ -16,8 +16,12 @@
   </div>
   <div class="party-description-section">
     <h4>Ton hôte</h4>
-    <p><%= @party.user.first_name %> <%= @party.user.last_name %> <%= image_tag "pierre.png", class: "avatar"%> </p>
-    <p> <%= @party.user.about %></p>
+    <% if @party.user == current_user %>
+      <p>Tu est l'hôte de cette soirée</p>
+    <% else %>
+      <p><%= @party.user.first_name %> <%= @party.user.last_name %> <%= image_tag "pierre.png", class: "avatar"%> </p>
+      <p> <%= @party.user.about %></p>
+    <% end %>
   </div>
   <div class="party-description-section">
     <h4>Localisation</h4>
