@@ -19,6 +19,7 @@ gem 'geocoder'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'jquery-rails'
+gem "rack", ">= 2.0.6"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
