@@ -5,7 +5,7 @@
         <h2 class="text-center">Organiser une soirée</h2>
 
         <%= simple_form_for(@party) do |f| %>
-          <%= f.input :name, :input_html => {class: "input-border"}, :label_html => {class: "label-style"}, placeholder: "Soirée cinéma" %>
+          <%= f.input :name, :input_html => {class: "input-border"}, label: "Nom", :label_html => {class: "label-style"}, placeholder: "Soirée cinéma" %>
 
           <%= f.input :date, :input_html => {class: "input-border"}, label: "Date", :label_html => {class: "label-style"}, placeholder: "19/11/2018 20h" %>
 

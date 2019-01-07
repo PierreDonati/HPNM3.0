@@ -1,6 +1,13 @@
 <% if @bookings.blank? %>
 
-  Pas encore de demande
+  <div class="no-booking-section">
+    <div class="no-booking-logo-section">
+      <i class="fas fa-exclamation"></i>
+    </div>
+    <div class="no-booking-text-section">
+      <p> Pas encore de demande </p>
+    </div>
+  </div>
 
 <% else %>
   <ul class="list-no-decoration">
