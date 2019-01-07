@@ -43,7 +43,7 @@
   font-size: 14px;
 }
 
-.status-section-choice{
+.status-section-choice {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -73,9 +73,27 @@
   opacity: 0.6
 }
 
-.list-no-decoration{
+.list-no-decoration {
   list-style: none;
 }
 
+.no-booking-section {
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 203px;
+  margin-left: 95px;
+  margin-top: 127px;
+  border-radius: 50%;
+  padding: 32px;
+  border: 1px solid rgba(150,150,150,0.1);
+}
 
+.no-booking-logo-section {
+  font-size: 50px;
+}
+
+.no-booking-text-section {
+  font-size: 18px;
+}
 
